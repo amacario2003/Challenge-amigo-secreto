@@ -8,10 +8,27 @@ function asignarTexto(elemento, texto){
     return;
 }
 
+
+//funcion para limpiar texto
 function limpiarInput(){
     document.querySelector('#amigo').value ='';
 }
 
+
+//crea nuevas tag dentro de la lista
+function listaAmigosLi(){
+    let lista = document.querySelector('#resultado');
+    lista.innerHTML = "";
+    for(let i = 0; i < listaAmigos.length; i++){
+        var amigo = listaAmigos[i];
+        let li = document.createElement('li');
+        li.textContent = amigo;
+        lista.appendChild(li);
+    }
+    
+}
+
+//funcion que valida si el campo esta vacio, de lo contrario agrega el amigo a la vista.
 function agregarAmigo(){
 
     nombreAmigo = document.getElementById('amigo').value;
@@ -23,6 +40,7 @@ function agregarAmigo(){
         console.log("este es el nombre insertado hasta el momento "+nombreAmigo);
         console.log("estos son los items en el array "+listaAmigos);
         limpiarInput();
+        listaAmigosLi();
     }
    
 

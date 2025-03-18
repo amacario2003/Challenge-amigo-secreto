@@ -45,3 +45,16 @@ function agregarAmigo(){
    
 
 }
+
+
+//funcion para realizar el sorteo del amigo
+function sortearAmigo(){
+    if(listaAmigos.length === 0){
+        alert("Usted no ha insertado ningun nombre, por favor ingrese nombres para poder jugar");
+    }else{
+        let indiceGenerado =  Math.floor(Math.random()*listaAmigos.length);
+        console.log("este es el indice" + indiceGenerado)
+        let amigoSecreto = listaAmigos[indiceGenerado];
+        asignarTexto('resultado', amigoSecreto + ` es tu amigo secreto`);
+    }
+}
